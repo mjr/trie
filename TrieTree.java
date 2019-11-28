@@ -73,6 +73,7 @@ public class TrieTree {
         TrieNode node = this.root;
         boolean notFound = false;
         String temporaryWord = "";
+        this.wordList = new ArrayList<>();
 
         for (char character: word.toCharArray()) {
             if (!node.getChildren().containsKey(character)) {
@@ -130,5 +131,28 @@ public class TrieTree {
         } else {
             this.printFeedbackForNoSuggestions(result);
         }
+    }
+
+    public List<String> getSuggestions(String word, int maxSuggestions) {
+        List<String> list = new ArrayList<>();
+        int result = this.checkSuggestions(word);
+        if (this.existSuggestions(result)) {
+            for (int i = 0; i < maxSuggestions; i++) {
+                list.add(this.wordList.get(i));
+            }
+        }
+
+        return list;
+    }
+
+    public List<String> getSuggestions(String word) {
+        List<String> list = new ArrayList<>();
+        int result = this.checkSuggestions(word);
+        if (this.existSuggestions(result)) {
+            Collections.sort(this.wordList, Comparator.comparing(String::length));
+            this.wordList.forEach(w -> list.add(w));
+        }
+
+        return list;
     }
 }

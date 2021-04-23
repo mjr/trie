@@ -1,6 +1,6 @@
 # Tries (Árvores Digitais)
 
-Uma árvore digital é uma árvore genérica onde cada nó pode ter quaisquer quanti- dade de filhos. Ela é utilizada para armazenar palavras que podem ser pesquisadas a partir de um prefixo comum.
+Uma árvore digital é uma árvore genérica onde cada nó pode ter quaisquer quantidade de filhos. Ela é utilizada para armazenar palavras que podem ser pesquisadas a partir de um prefixo comum.
 
 ### CLI
 
